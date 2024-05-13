@@ -3,5 +3,8 @@
     <p>Mis en ligne le {{ creationDate }}</p>
     <img [src]="imageUrl" [alt]="title">
     <p>{{ description }}</p>
-    <p>🤌 {{ snaps }}</p>
+    <p>
+        <button (click)="onAddOrRemoveSnap()">{{ buttonText }}</button>
+        🤌 {{ snaps }}
+    </p>
 </div>
