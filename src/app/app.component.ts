@@ -18,28 +18,28 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
       
-    this.facesnap1 = new FaceSnap(
-      'Archibald',
-      'Mon meilleur ami depuis tout petit',
-      new Date(),
-      8,
-      'https://picsum.photos/300/150?random=1'
-    );
+    this.facesnap1 = {
+      title: 'Archibald',
+      description: 'Mon meilleur ami depuis tout petit',
+      creationDate:new Date(),
+      snaps: 8,
+      imageUrl: 'https://picsum.photos/300/150?random=1'
+    };
 
-    this.facesnap2 = new FaceSnap(
-      'Snap 2',
-      'Ceci est un autre snap',
-      new Date(),
-      8,
-      'https://picsum.photos/300/150?random=2'
-    );
+    this.facesnap2 = {
+      title: 'Snap 2',
+      description: 'Ceci est un autre snap',
+      creationDate: new Date(),
+      snaps: 8,
+      imageUrl: 'https://picsum.photos/300/150?random=2'
+    };
 
-    this.facesnap3 = new FaceSnap(
-      'Snap 3',
-      'Ceci est aussi un snap',
-      new Date(),
-      8,
-      'https://picsum.photos/300/150?random=3'
-    );
+    this.facesnap3 = {
+      title: 'Snap 3',
+      description: 'Ceci est aussi un snap',
+      creationDate: new Date(),
+      snaps: 8,
+      imageUrl: 'https://picsum.photos/300/150?random=3'
+    };
   }
 }
