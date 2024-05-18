@@ -8,7 +8,13 @@ import * as fr from '@angular/common/locales/fr';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent ,FaceSnapListComponent, CommonModule, NgFor],
+  imports: [ 
+    RouterOutlet, 
+    HeaderComponent, 
+    FaceSnapListComponent, 
+    CommonModule, 
+    NgFor
+  ],
   providers : [
     { provide: LOCALE_ID, useValue: 'fr-FR' }
   ],
