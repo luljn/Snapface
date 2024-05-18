@@ -8,6 +8,7 @@ export class FaceSnapsServices {
 
     facesnaps: FaceSnap[] = [ 
         {
+          id: 1,
           title: 'Archibald',
           description: 'Mon meilleur ami depuis tout petit',
           creationDate:new Date(),
@@ -17,6 +18,7 @@ export class FaceSnapsServices {
         },
   
         {
+            id: 2,
           title: 'Snap 2',
           description: 'Ceci est un autre snap',
           creationDate: new Date(),
@@ -26,11 +28,42 @@ export class FaceSnapsServices {
         },
   
         {
+          id: 3,
           title: 'Snap 3',
           description: 'Ceci est aussi un snap',
           creationDate: new Date(),
           snaps: 8,
           imageUrl: 'https://picsum.photos/300/150?random=3'
         },
-      ]
+      ];
+
+    getAllFaceSnaps(): FaceSnap[]{
+
+        return this.facesnaps;
+    }
+
+    snapFaceSnapById(faceSnapId: number): void{
+        const faceSnap = this.facesnaps.find(faceSnap => faceSnap.id === faceSnapId);
+        if(faceSnap){
+
+            faceSnap.snaps++;
+        }
+        else{
+
+            throw new Error("FaceSnap not found");
+        }
+    }
+
+    UnSnapFaceSnapById(faceSnapId: number): void{
+
+        const faceSnap = this.facesnaps.find(faceSnap => faceSnap.id === faceSnapId);
+        if(faceSnap){
+
+            faceSnap.snaps--;
+        }
+        else{
+
+            throw new Error("FaceSnap not found");
+        }
+    }
 }
