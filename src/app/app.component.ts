@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
 import { HeaderComponent } from './header/header.component';
 import * as fr from '@angular/common/locales/fr';
+import { interval, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -23,10 +24,15 @@ import * as fr from '@angular/common/locales/fr';
 })
 export class AppComponent implements OnInit {
   
+  interval$!: Observable<number>
+
   constructor(){
 
     registerLocaleData(fr.default);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.interval$ = interval(1000);
+  }
 }
