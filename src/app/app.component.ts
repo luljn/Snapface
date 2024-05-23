@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
 import { HeaderComponent } from './header/header.component';
 import * as fr from '@angular/common/locales/fr';
-import { interval, Observable } from 'rxjs';
+import { interval, map, filter, Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +24,7 @@ import { interval, Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   
-  interval$!: Observable<number>
+  interval$!: Observable<any>
 
   constructor(){
 
@@ -33,6 +33,18 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.interval$ = interval(1000);
+    this.interval$ = interval(1000).pipe(
+      filter(value => value % 3 === 0),
+      map(value => value % 2 === 0 ? 
+        `Je suis ${value} et je suis pair` :
+        `Je suis ${value} et je suis impair`
+      ),
+      tap(text => this.logger(text))
+    );
+  }
+
+  logger(text: string): void{
+
+    console.log(`Log : ${text}`);
   }
 }
