@@ -5,6 +5,7 @@ import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component
 import { HeaderComponent } from './header/header.component';
 import * as fr from '@angular/common/locales/fr';
 import { interval, map, filter, Observable, tap } from 'rxjs';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { interval, map, filter, Observable, tap } from 'rxjs';
     HeaderComponent, 
     FaceSnapListComponent, 
     CommonModule, 
-    NgFor
+    NgFor,
+    FormsModule
   ],
   providers : [
     { provide: LOCALE_ID, useValue: 'fr-FR' }
