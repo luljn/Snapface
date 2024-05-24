@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { NgModel, FormsModule } from '@angular/forms';
+import { NgModel, FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-landing-page',
@@ -22,8 +22,8 @@ export class LandingPageComponent implements OnInit {
     this.router.navigateByUrl("facesnaps");
   }
 
-  onSubmitForm(): void{
+  onSubmitForm(form: NgForm): void{
 
-    console.log(this.userEmail);
+    console.log(form.value);
   }
 }
