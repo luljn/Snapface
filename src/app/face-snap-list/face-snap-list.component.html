@@ -1,2 +1,2 @@
-<app-face-snap *ngFor="let facesnap of facesnaps" [faceSnap]="facesnap">
+<app-face-snap *ngFor="let facesnap of facesnaps$ | async" [faceSnap]="facesnap">
 </app-face-snap>

@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import * as fr from '@angular/common/locales/fr';
 import { interval, map, filter, Observable, tap } from 'rxjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule, 
     NgFor,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers : [
     { provide: LOCALE_ID, useValue: 'fr-FR' }
