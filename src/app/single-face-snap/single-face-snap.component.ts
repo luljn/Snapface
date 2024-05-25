@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { NgIf, NgStyle, NgClass, UpperCasePipe, DatePipe } from '@angular/common';
+import { NgIf, NgStyle, NgClass, UpperCasePipe, DatePipe, AsyncPipe } from '@angular/common';
 import { FaceSnap } from '../models/face-snap.models';
 import { FaceSnapsServices } from '../services/face-snaps.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-single-face-snap',
   standalone: true,
-  imports: [ NgIf, NgStyle, NgClass, UpperCasePipe, DatePipe, RouterLink ],
+  imports: [ NgIf, NgStyle, NgClass, UpperCasePipe, DatePipe, RouterLink, AsyncPipe ],
   templateUrl: './single-face-snap.component.html',
   styleUrl: './single-face-snap.component.scss'
 })
 export class SingleFaceSnapComponent implements OnInit {
 
-  faceSnap!: FaceSnap;
+  faceSnap$!: Observable<FaceSnap>
 
   snapped!: boolean;
   buttonText!: string;
@@ -26,23 +27,23 @@ export class SingleFaceSnapComponent implements OnInit {
     this.snapped = false;
     this.buttonText = 'Oh Snap !'
     const faceSnapId = +this.route.snapshot.params['id'];
-    this.faceSnap = this.faceSnapsService.getFaceSnapById(faceSnapId);
+    this.faceSnap$ = this.faceSnapsService.getFaceSnapById(faceSnapId);
   }
 
   onAddOrRemoveSnap(){
 
-    if(this.snapped == true){
+    // if(this.snapped == true){
 
-      this.faceSnapsService.snapOrUnsnapFaceSnapById(this.faceSnap.id, 'unsnap');
-      this.snapped = false;
-      this.buttonText = 'Oh Snap !';
-    }
+    //   this.faceSnapsService.snapOrUnsnapFaceSnapById(this.faceSnap.id, 'unsnap');
+    //   this.snapped = false;
+    //   this.buttonText = 'Oh Snap !';
+    // }
 
-    else {
+    // else {
 
-      this.faceSnapsService.snapOrUnsnapFaceSnapById(this.faceSnap.id, 'snap');
-      this.snapped = true;
-      this.buttonText = 'Oups UnSnap !'
-    }
+    //   this.faceSnapsService.snapOrUnsnapFaceSnapById(this.faceSnap.id, 'snap');
+    //   this.snapped = true;
+    //   this.buttonText = 'Oups UnSnap !'
+    // }
   }
 }
