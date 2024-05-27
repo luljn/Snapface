@@ -1,8 +1,7 @@
 import { Component, OnInit, LOCALE_ID } from '@angular/core';
-import { CommonModule, NgFor, registerLocaleData } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
-import * as fr from '@angular/common/locales/fr';
 import { interval, map, filter, Observable, tap } from 'rxjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,11 +28,6 @@ import { CoreModule } from './core/core.module';
 export class AppComponent implements OnInit {
   
   interval$!: Observable<any>
-
-  constructor(){
-
-    registerLocaleData(fr.default);
-  }
 
   ngOnInit(): void {
 
