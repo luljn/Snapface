@@ -1,8 +1,17 @@
 <header>
-    <h1>SnapFace</h1>
-    <nav>
-        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">Home</a>
-        <a routerLink="facesnaps" routerLinkActive="active">FaceSnaps</a>
-    </nav>
-    <button (click)="onAddNewFaceSnap()">+</button>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <span class="navbar-brand">SnapFace</span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">Home</a>
+              <a class="nav-link" routerLink="facesnaps" routerLinkActive="active">FaceSnaps</a>
+              <button (click)="onAddNewFaceSnap()">+</button>
+            </div>
+          </div>
+        </div>
+      </nav>
 </header>
