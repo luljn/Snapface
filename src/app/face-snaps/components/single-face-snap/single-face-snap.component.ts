@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { NgIf, NgStyle, NgClass, UpperCasePipe, DatePipe, AsyncPipe } from '@angular/common';
-import { FaceSnap } from '../core/models/face-snap.models';
-import { FaceSnapsServices } from '../core/services/face-snaps.service';
+import { CommonModule, NgIf, NgStyle, NgClass, UpperCasePipe, DatePipe, AsyncPipe } from '@angular/common';
+import { FaceSnap } from '../../../core/models/face-snap.models';
+import { FaceSnapsServices } from '../../../core/services/face-snaps.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-single-face-snap',
   standalone: true,
-  imports: [ NgIf, NgStyle, NgClass, UpperCasePipe, DatePipe, RouterLink, AsyncPipe ],
+  imports: [ NgIf, NgStyle, NgClass, UpperCasePipe, DatePipe, RouterLink, AsyncPipe, CommonModule ],
   templateUrl: './single-face-snap.component.html',
   styleUrl: './single-face-snap.component.scss'
 })

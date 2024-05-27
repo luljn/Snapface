@@ -1,24 +1,24 @@
 import { Component, OnInit, LOCALE_ID } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
 import { interval, map, filter, Observable, tap } from 'rxjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
+import { FaceSnapsModule } from './face-snaps/face-snaps.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [ 
     RouterOutlet, 
-    FaceSnapListComponent, 
     CommonModule, 
     NgFor,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
+    FaceSnapsModule
   ],
   providers : [
   ],
