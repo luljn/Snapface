@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgIf, NgStyle, NgClass, UpperCasePipe, DatePipe } from '@angular/common';
-import { FaceSnap } from '../models/face-snap.models';
-import { FaceSnapsServices } from '../services/face-snaps.service';
+import { FaceSnap } from '../core/models/face-snap.models';
+import { FaceSnapsServices } from '../core/services/face-snaps.service';
 import { Router } from '@angular/router';
 
 @Component({
