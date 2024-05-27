@@ -5,6 +5,7 @@ import { FaceSnapListComponent } from './components/face-snap-list/face-snap-lis
 import { NewFaceSnapComponent } from './components/new-face-snap/new-face-snap.component';
 import { SingleFaceSnapComponent } from './components/single-face-snap/single-face-snap.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FaceSnapRoutingModule } from './face-snaps-routing.module';
 
 
 
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FaceSnapComponent,
     FaceSnapListComponent,
-    NewFaceSnapComponent
+    NewFaceSnapComponent,
+    FaceSnapRoutingModule
   ],
   exports: [
     FaceSnapComponent,
